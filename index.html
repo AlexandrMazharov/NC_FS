@@ -295,23 +295,6 @@
             </div>
           </div>
         </div>
-        <!-- <div class="choose__right">
-          <h4>Testimonails</h4>
-          <p>
-            <em>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              nam sunt fuga quibusdam ratione adipisci deleniti incidunt!
-              Facere, possimus. Autem magnam quos aliquid nihil mollitia
-              necessitatibus
-            </em>
-          </p>
-          <div class="peope">
-            <div class="people__avatar"></div>
-            <p class="people_name">Frank Southridb</p>
-            <p class="people__company"></p>
-            <p>Support Network</p>
-          </div>
-        </div> -->
       </div>
     </section>
     <section class="help2">
@@ -332,6 +315,41 @@
           </div>
         </div>
       </div>
+    </section>
+    <section>
+      <form class="messegeForm">
+        <div class="form-inner">
+          <h3>Написать нам</h3>
+          <input
+            id="fistName"
+            type="text"
+            class="fistName"
+            placeholder="First name"
+            required
+          />
+          <!-- <label class="fistName" for="fistName">Поле заполнено не корректно</label> -->
+
+          <input id= "lastnametype="text" name="lastName" placeholder="Lastname"
+          required />
+          <!-- <label for="lastname" name="lastName">Поле заполнено не корректно</label> -->
+
+          <input id="tel" type="number" name="tel" placeholder="Tepephone " />
+          <!-- <label for="tel">Поле заполнено не корректно</label> -->
+          <input id="email" type="email" name="email" placeholder="Email"
+          required / >
+          <!-- <label for="email">Поле заполнено не корректно</label> -->
+          <textarea
+            id="meess"
+            placeholder="Сообщение..."
+            name="messege"
+            rows="3"
+            required
+          ></textarea>
+          <p id="formvalid">Помеченные красным поля заполенны не верно!</p>
+          <!-- <label for="meess">Поле заполнено не корректно</label> -->
+          <input type="button" value="Отправить" onclick="formsubmit()" />
+        </div>
+      </form>
     </section>
     <footer id="contact">
       <div class="container">
@@ -370,5 +388,6 @@
         </div>
       </div>
     </footer>
+    <script src="./task5.js"></script>
   </body>
 </html>

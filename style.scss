@@ -497,6 +497,80 @@ footer {
     left: -100px;
   }
 }
+// form
+input,
+textarea {
+  border: 1px solid #fafafa;
+  outline: none;
+}
+.messegeForm {
+  position: relative;
+  max-width: 400px;
+  margin: 50px auto 0;
+  background: white;
+  border-radius: 30px;
+}
+
+.form-inner {
+  padding: 50px;
+  label {
+    font-size: 12px;
+    margin-left: 40px;
+    color: #df1818;
+    opacity: 0;
+  }
+}
+.form-inner input,
+.form-inner textarea {
+  display: block;
+  width: 100%;
+  padding: 0 10px;
+  margin-top: 10px;
+
+  background: #e9eff6;
+  line-height: 40px;
+  border-radius: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.form-inner textarea {
+  resize: none;
+}
+.form-inner h3 {
+  margin-top: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  color: #707981;
+}
+// form valid
+
+.valid {
+  border: 1px solid green;
+}
+.invalid {
+  border: 1px solid red;
+  position: relative;
+}
+// label.invalid {
+//   opacity: 1;
+// }
+#formvalid {
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+}
+.forminvalid {
+  opacity: 1;
+  color: red;
+}
+:required {
+  border-bottom: 4px solid green;
+}
+input[type="number"] {
+  margin-right: -3px;
+}
+
 @media SCREEN AND (max-width: 425px) {
   .description-item__text {
     padding-top: 0px;
