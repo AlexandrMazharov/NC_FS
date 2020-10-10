@@ -322,6 +322,7 @@
           <h3>Написать нам</h3>
 
           <input
+            onChange="formChange()"
             type="text"
             class="fistName"
             placeholder="First name"
@@ -331,22 +332,32 @@
             >Поле заполнено не корректно</label
           >
 
-          <input id= "lastnametype="text" name="lastName" placeholder="Lastname"
-          required />
+          <input
+            onChange="formChange()"
+            type="text"
+            name="lastName"
+            placeholder="Lastname"
+            required
+          />
           <label class="lastName-label" for="lastname" name="lastName"
             >Поле заполнено не корректно</label
           >
 
-          <input id="tel" type="number" name="tel" placeholder="Tepephone " />
+          <input
+            onChange="formChange()"
+            type="tel"
+            name="tel"
+            placeholder="Tepephone "
+          />
           <label class="tel-label" for="tel">Поле заполнено не корректно</label>
 
-          <input id="email" type="email" name="email" placeholder="Email"
-          required / >
+          <input onChange="formChange()" type="email" name="email"
+          placeholder="Email" required / >
           <label class="email-label" for="email"
             >Поле заполнено не корректно</label
           >
           <textarea
-            id="meess"
+            onChange="formChange()"
             placeholder="Сообщение..."
             name="messege"
             rows="3"
@@ -355,8 +366,13 @@
           <label class="mes-label" for="meess"
             >Поле заполнено не корректно</label
           >
-          <p id="formvalid">Помеченные красным поля заполенны не верно!</p>
-          <input type="button" value="Отправить" onclick="formsubmit()" />
+          <input
+            id="formsubmit"
+            type="button"
+            value="Отправить"
+            onclick="formClick()"
+            disabled
+          />
         </div>
       </form>
     </section>

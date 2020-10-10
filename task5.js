@@ -16,6 +16,27 @@ class CustomForm {
 
 let f = document.forms[0];
 let currentform = new CustomForm("", "", "", "", "");
+let fnLabel = document.getElementsByClassName("fistName-label");
+let lnLabel = document.getElementsByClassName("lastName-label");
+let telLabel = document.getElementsByClassName("tel-label");
+let emailLabel = document.getElementsByClassName("email-label");
+let messLabel = document.getElementsByClassName("mes-label");
+console.log(messLabel);
+let fn = f.elements[0];
+let ln = f.elements[1];
+let tel = f.elements[2];
+let email = f.elements[3];
+let mes = f.elements[4];
+
+function formChange() {
+  let btn = document.getElementById("formsubmit");
+  btn.disabled = false;
+  if (!checkFN(fn, fnLabel)) btn.disabled = true;
+  if (!checkLn(ln, lnLabel)) btn.disabled = true;
+  if (!checkEmail(email, emailLabel)) btn.disabled = true;
+  if (!checkTel(tel, telLabel)) btn.disabled = true;
+  if (!checkMess(mes, messLabel)) btn.disabled = true;
+}
 // если есть сохраненная старая форма
 if (localStorage.getItem("oldform")) {
   let oldform = JSON.parse(localStorage.getItem("oldform"));
@@ -35,6 +56,7 @@ function completeForm() {
   f.elements[3].value = currentform.email;
   f.elements[4].value = currentform.mess;
 }
+formChange();
 // сохраняем в local storage
 function saveToLocal(fn, ln, tel, email, mess) {
   let f = new CustomForm(
@@ -47,7 +69,80 @@ function saveToLocal(fn, ln, tel, email, mess) {
   localStorage.clear;
   localStorage.setItem("oldform", JSON.stringify(f));
 }
-function check
+function checkFN(fn, fnLabel) {
+  if (!/^\s*$/.test(fn.value)) {
+    fn.classList.remove("invalid");
+    fn.classList.add("valid");
+    fnLabel[0].classList.remove("labelInValid");
+    return true;
+  } else {
+    // userMessageFormValid += "First name";
+    formValid = false;
+    fn.classList.add("invalid");
+    fnLabel[0].classList.add("labelInValid");
+    return false;
+  }
+}
+function checkLn(ln, lnLabel) {
+  if (!/^\s*$/.test(ln.value)) {
+    ln.classList.remove("invalid");
+    ln.classList.add("valid");
+    lnLabel[0].classList.remove("labelInValid");
+    return true;
+  } else {
+    // userMessageFormValid += ", Last name";
+    formValid = false;
+    ln.classList.add("invalid");
+    lnLabel[0].classList.add("labelInValid");
+    return false;
+  }
+}
+function checkTel(tel, telLabel) {
+  if (
+    !/^\s*$/.test(tel.value) &&
+    /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.test(tel.value)
+  ) {
+    tel.classList.remove("invalid");
+    tel.classList.add("valid");
+    telLabel[0].classList.remove("labelInValid");
+    return true;
+  } else {
+    // userMessageFormValid += ", Telephone";
+    tel.classList.add("invalid");
+    telLabel[0].classList.add("labelInValid");
+    return false;
+  }
+}
+function checkEmail(email, emailLabel) {
+  if (
+    /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(
+      email.value
+    )
+  ) {
+    email.classList.remove("invalid");
+    email.classList.add("valid");
+    // userMessageFormValid += ", Email";
+    emailLabel[0].classList.remove("labelInValid");
+    return true;
+  } else {
+    email.classList.add("invalid");
+    emailLabel[0].classList.add("labelInValid");
+    return false;
+  }
+}
+function checkMess(mes, messLabel) {
+  if (!/^\s*$/.test(mes.value)) {
+    mes.classList.remove("invalid");
+    mes.classList.add("valid");
+    messLabel[0].classList.remove("labelInValid");
+    return true;
+  } else {
+    // userMessageFormValid += ", Message";
+    mes.classList.add("invalid");
+    messLabel[0].classList.add("labelInValid");
+    return false;
+  }
+}
 
 // получить конкретное значение куки
 function get_cookie(cookie_name) {
@@ -58,7 +153,7 @@ function get_cookie(cookie_name) {
   else return null;
 }
 // обрботчик кнопки
-function formsubmit() {
+function formClick() {
   let isSent = get_cookie("inSent");
   if (isSent) {
     createCustomAlert(
@@ -68,83 +163,18 @@ function formsubmit() {
     //   `<${currentform["firstName"]} ${currentform["lastName"]}>, ваше обращение обрабатывается!!`
     // );
   } else {
-    let fnLabel = document.getElementsByClassName("fistName-label");
-    let lnLabel = document.getElementsByClassName("lastName-label");
-    let telLabel = document.getElementsByClassName("tel-label");
-    let emailLabel = document.getElementsByClassName("email-label");
-    let messLabel = document.getElementsByClassName("mes-label");
-    console.log(messLabel);
-    let fn = f.elements[0];
-    let ln = f.elements[1];
-    let tel = f.elements[2];
-    let email = f.elements[3];
-    let mes = f.elements[4];
     //let userMessageFormValid = ""; // строка с сообщением о невалидных полях
     console.log(mes);
     let formValid = true;
-    //проверка имени
-    if (!/^\s*$/.test(fn.value)) {
-      fn.classList.remove("invalid");
-      fn.classList.add("valid");
-      fnLabel[0].classList.remove("labelInValid");
-    } else {
-      // userMessageFormValid += "First name";
-      formValid = false;
-      fn.classList.add("invalid");
-      fnLabel[0].classList.add("labelInValid");
-    }
-    // проверка фамилии
-    if (!/^\s*$/.test(ln.value)) {
-      ln.classList.remove("invalid");
-      ln.classList.add("valid");
-      lnLabel[0].classList.remove("labelInValid");
-    } else {
-      // userMessageFormValid += ", Last name";
-      formValid = false;
-      ln.classList.add("invalid");
-      lnLabel[0].classList.add("labelInValid");
-    }
 
-    if (
-      !/^\s*$/.test(tel.value) &&
-      /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.test(tel.value)
-    ) {
-      tel.classList.remove("invalid");
-      tel.classList.add("valid");
-      telLabel[0].classList.remove("labelInValid");
-    } else {
-      // userMessageFormValid += ", Telephone";
-      tel.classList.add("invalid");
-      formValid = false;
-      telLabel[0].classList.add("labelInValid");
-    }
-    //проверка email
-    if (
-      /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(
-        email.value
-      )
-    ) {
-      email.classList.remove("invalid");
-      email.classList.add("valid");
-      // userMessageFormValid += ", Email";
-      emailLabel[0].classList.remove("labelInValid");
-    } else {
-      formValid = false;
-      email.classList.add("invalid");
-      emailLabel[0].classList.add("labelInValid");
-    }
+    formValid =
+      checkFN(fn, fnLabel) &&
+      checkLn(ln, lnLabel) &&
+      checkEmail(email, emailLabel) &&
+      checkTel(tel, telLabel) &&
+      checkMess(mes, messLabel);
 
-    if (!/^\s*$/.test(mes.value)) {
-      mes.classList.remove("invalid");
-      mes.classList.add("valid");
-      messLabel[0].classList.remove("labelInValid");
-    } else {
-      formValid = false;
-      // userMessageFormValid += ", Message";
-      mes.classList.add("invalid");
-      messLabel[0].classList.add("labelInValid");
-    }
-
+    console.log(formValid); // true если форма валидна
     if (!formValid) {
       // тут было сообщение о невалидных полях
       // document.document.getElementById("formvalid").classList.add("forminvalid");
@@ -159,7 +189,6 @@ function formsubmit() {
     }
   }
 }
-
 
 // CUSTOM ALERT
 
@@ -205,4 +234,3 @@ function removeCustomAlert() {
     .getElementsByTagName("body")[0]
     .removeChild(document.getElementById("modalContainer"));
 }
-
