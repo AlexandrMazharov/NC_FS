@@ -320,24 +320,31 @@
       <form class="messegeForm">
         <div class="form-inner">
           <h3>Написать нам</h3>
+
           <input
-            id="fistName"
             type="text"
             class="fistName"
             placeholder="First name"
             required
           />
-          <!-- <label class="fistName" for="fistName">Поле заполнено не корректно</label> -->
+          <label class="fistName-label" for="fistName"
+            >Поле заполнено не корректно</label
+          >
 
           <input id= "lastnametype="text" name="lastName" placeholder="Lastname"
           required />
-          <!-- <label for="lastname" name="lastName">Поле заполнено не корректно</label> -->
+          <label class="lastName-label" for="lastname" name="lastName"
+            >Поле заполнено не корректно</label
+          >
 
           <input id="tel" type="number" name="tel" placeholder="Tepephone " />
-          <!-- <label for="tel">Поле заполнено не корректно</label> -->
+          <label class="tel-label" for="tel">Поле заполнено не корректно</label>
+
           <input id="email" type="email" name="email" placeholder="Email"
           required / >
-          <!-- <label for="email">Поле заполнено не корректно</label> -->
+          <label class="email-label" for="email"
+            >Поле заполнено не корректно</label
+          >
           <textarea
             id="meess"
             placeholder="Сообщение..."
@@ -345,8 +352,10 @@
             rows="3"
             required
           ></textarea>
+          <label class="mes-label" for="meess"
+            >Поле заполнено не корректно</label
+          >
           <p id="formvalid">Помеченные красным поля заполенны не верно!</p>
-          <!-- <label for="meess">Поле заполнено не корректно</label> -->
           <input type="button" value="Отправить" onclick="formsubmit()" />
         </div>
       </form>

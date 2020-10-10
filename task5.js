@@ -47,6 +47,8 @@ function saveToLocal(fn, ln, tel, email, mess) {
   localStorage.clear;
   localStorage.setItem("oldform", JSON.stringify(f));
 }
+function check
+
 // получить конкретное значение куки
 function get_cookie(cookie_name) {
   var results = document.cookie.match(
@@ -59,83 +61,148 @@ function get_cookie(cookie_name) {
 function formsubmit() {
   let isSent = get_cookie("inSent");
   if (isSent) {
-    alert(
-      `<${currentform["firstName"]} ${currentform["lastName"]}>, ваше обращение обрабатывается!!`
+    createCustomAlert(
+      `${currentform["firstName"]} ${currentform["lastName"]}, ваше обращение обрабатывается!!`
     );
-  }
-
-  let fn = f.elements[0];
-  let ln = f.elements[1];
-  let tel = f.elements[2];
-  let email = f.elements[3];
-  let mes = f.elements[4];
-  let userMessageFormValid = "";
-  console.log(mes);
-  let formValid = true;
-
-  if (!/^\s*$/.test(fn.value)) {
-    fn.classList.remove("invalid");
-    fn.classList.add("valid");
-  } else {
-    userMessageFormValid += "First name";
-    formValid = false;
-    fn.classList.add("invalid");
-  }
-
-  if (!/^\s*$/.test(ln.value)) {
-    ln.classList.remove("invalid");
-    ln.classList.add("valid");
-  } else {
-    userMessageFormValid += ", Last name";
-    formValid = false;
-    ln.classList.add("invalid");
-  }
-
-  if (
-    !/^\s*$/.test(tel.value) &&
-    /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.test(tel.value)
-  ) {
-    tel.classList.remove("invalid");
-    tel.classList.add("valid");
-    userMessageFormValid += ", Telephone";
-  } else {
-    tel.classList.add("invalid");
-    formValid = false;
-  }
-  if (
-    /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(
-      email.value
-    )
-  ) {
-    email.classList.remove("invalid");
-    email.classList.add("valid");
-    userMessageFormValid += ", Email";
-  } else {
-    formValid = false;
-    email.classList.add("invalid");
-  }
-
-  if (!/^\s*$/.test(mes.value)) {
-    mes.classList.remove("invalid");
-    mes.classList.add("valid");
-  } else {
-    formValid = false;
-    userMessageFormValid += ", Message";
-    mes.classList.add("invalid");
-  }
-
-  if (!formValid) {
-    console.log("не верное");
-    // console.log(mes.value);
-    // document.document.getElementById("formvalid").classList.add("forminvalid");
-
     // alert(
-    //   `Поля ${userMessageFormValid} заполнены не верно, пожалуйста исправьте`
+    //   `<${currentform["firstName"]} ${currentform["lastName"]}>, ваше обращение обрабатывается!!`
     // );
   } else {
-    saveToLocal(fn, ln, tel, email, mes);
+    let fnLabel = document.getElementsByClassName("fistName-label");
+    let lnLabel = document.getElementsByClassName("lastName-label");
+    let telLabel = document.getElementsByClassName("tel-label");
+    let emailLabel = document.getElementsByClassName("email-label");
+    let messLabel = document.getElementsByClassName("mes-label");
+    console.log(messLabel);
+    let fn = f.elements[0];
+    let ln = f.elements[1];
+    let tel = f.elements[2];
+    let email = f.elements[3];
+    let mes = f.elements[4];
+    //let userMessageFormValid = ""; // строка с сообщением о невалидных полях
+    console.log(mes);
+    let formValid = true;
+    //проверка имени
+    if (!/^\s*$/.test(fn.value)) {
+      fn.classList.remove("invalid");
+      fn.classList.add("valid");
+      fnLabel[0].classList.remove("labelInValid");
+    } else {
+      // userMessageFormValid += "First name";
+      formValid = false;
+      fn.classList.add("invalid");
+      fnLabel[0].classList.add("labelInValid");
+    }
+    // проверка фамилии
+    if (!/^\s*$/.test(ln.value)) {
+      ln.classList.remove("invalid");
+      ln.classList.add("valid");
+      lnLabel[0].classList.remove("labelInValid");
+    } else {
+      // userMessageFormValid += ", Last name";
+      formValid = false;
+      ln.classList.add("invalid");
+      lnLabel[0].classList.add("labelInValid");
+    }
 
-    alert(`${fn.value} ${ln.value}, спасибо за обращение!`);
-    document.cookie = "inSent=true";
+    if (
+      !/^\s*$/.test(tel.value) &&
+      /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.test(tel.value)
+    ) {
+      tel.classList.remove("invalid");
+      tel.classList.add("valid");
+      telLabel[0].classList.remove("labelInValid");
+    } else {
+      // userMessageFormValid += ", Telephone";
+      tel.classList.add("invalid");
+      formValid = false;
+      telLabel[0].classList.add("labelInValid");
+    }
+    //проверка email
+    if (
+      /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(
+        email.value
+      )
+    ) {
+      email.classList.remove("invalid");
+      email.classList.add("valid");
+      // userMessageFormValid += ", Email";
+      emailLabel[0].classList.remove("labelInValid");
+    } else {
+      formValid = false;
+      email.classList.add("invalid");
+      emailLabel[0].classList.add("labelInValid");
+    }
+
+    if (!/^\s*$/.test(mes.value)) {
+      mes.classList.remove("invalid");
+      mes.classList.add("valid");
+      messLabel[0].classList.remove("labelInValid");
+    } else {
+      formValid = false;
+      // userMessageFormValid += ", Message";
+      mes.classList.add("invalid");
+      messLabel[0].classList.add("labelInValid");
+    }
+
+    if (!formValid) {
+      // тут было сообщение о невалидных полях
+      // document.document.getElementById("formvalid").classList.add("forminvalid");
+      // alert(
+      //   `Поля ${userMessageFormValid} заполнены не верно, пожалуйста исправьте`
+      // );
+    } else {
+      saveToLocal(fn, ln, tel, email, mes);
+      createCustomAlert(`${fn.value} ${ln.value}, спасибо за обращение!`);
+      // alert(`${fn.value} ${ln.value}, спасибо за обращение!`);
+      document.cookie = "inSent=true";
+    }
   }
 }
+
+
+// CUSTOM ALERT
+
+const ALERT_TITLE = "MESSAGE!";
+const ALERT_BUTTON_TEXT = "Ok";
+
+function createCustomAlert(txt) {
+  d = document;
+
+  mObj = d.getElementsByTagName("body")[0].appendChild(d.createElement("div"));
+  mObj.id = "modalContainer";
+  mObj.style.height = d.documentElement.scrollHeight + "px";
+
+  alertObj = mObj.appendChild(d.createElement("div"));
+  alertObj.id = "alertBox";
+  if (d.all && !window.opera)
+    alertObj.style.top = document.documentElement.scrollTop + "px";
+  alertObj.style.left =
+    (d.documentElement.scrollWidth - alertObj.offsetWidth) / 2 + "px";
+  alertObj.style.visiblity = "visible";
+
+  h1 = alertObj.appendChild(d.createElement("h1"));
+  h1.appendChild(d.createTextNode(ALERT_TITLE));
+
+  msg = alertObj.appendChild(d.createElement("p"));
+  msg.innerHTML = txt;
+
+  btn = alertObj.appendChild(d.createElement("a"));
+  btn.id = "closeBtn";
+  btn.appendChild(d.createTextNode(ALERT_BUTTON_TEXT));
+  btn.href = "#";
+  btn.focus();
+  btn.onclick = function () {
+    removeCustomAlert();
+    return false;
+  };
+
+  alertObj.style.display = "block";
+}
+
+function removeCustomAlert() {
+  document
+    .getElementsByTagName("body")[0]
+    .removeChild(document.getElementById("modalContainer"));
+}
+
