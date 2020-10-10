@@ -6,6 +6,6 @@
 | 30.09.20     | task 3        | task3 add topic, adaptive, html5,css3 |  https://gitlab.com/nc-samara-frontend-course-2020/development/fs_mazharov_alexandr/-/merge_requests/3   |
 | 02.10.20     | task 4        | task4 |  https://gitlab.com/nc-samara-frontend-course-2020/development/fs_mazharov_alexandr/-/merge_requests/4 |
 | 09.10.20     | task 5 basic         |main tasks completed |   |
-| 10.10.20     | task 5 full         |main tasks completed |   https://gitlab.com/nc-samara-frontend-course-2020/development/fs_mazharov_alexandr/-/merge_requests/5|
+| 10.10.20     | task 5 full         |all tasks 5  completed completely |   https://gitlab.com/nc-samara-frontend-course-2020/development/fs_mazharov_alexandr/-/merge_requests/5|
 
 
