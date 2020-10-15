@@ -1,0 +1,24 @@
+body {  
+  background: #fafafa;
+  margin: 0px auto;
+  display: flex;
+}
+.wrapper {
+
+  margin: 0px auto;
+}
+.table {
+  background: white;
+  min-width: 600px;
+}
+.row {
+  min-height: 40px;
+  border: 1px;
+  display: flex;
+  justify-content: start;
+}
+.cell {
+  border: 1px solid black;
+  min-width: 40px;
+  min-height: 40px;
+}
