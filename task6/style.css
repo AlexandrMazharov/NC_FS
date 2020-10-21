@@ -1,15 +1,25 @@
-body {  
+body {
   background: #fafafa;
   margin: 0px auto;
   display: flex;
 }
 .wrapper {
-
   margin: 0px auto;
-}
-.table {
-  background: white;
   min-width: 600px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 1), -23px 0 20px -23px rgba(0, 0, 0, 0.8),
+    23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+input[type="button"] {
+  padding: 5px;
+  margin: 5px;
+}
+.controlCol {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+#table {
 }
 .row {
   min-height: 40px;

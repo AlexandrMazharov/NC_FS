@@ -1,14 +1,22 @@
-
-function addCol(current) {
-  let row = current.parentNode;
-  let input = document.createElement("input");
-  input.type = "text";
-  row.prepend(input);
+function addCol() {
+  let rows = document.getElementsByClassName("row");
+  for (let i = 0; i < rows.length; i++) {
+    let row = rows[i];
+    let input = document.createElement("input");
+    input.type = "text";
+    input.className = "cell";
+    row.prepend(input);
+  }
 }
-function dellCol(current) {
-  let row = current.parentNode;
-  if (row.children.length > 3) row.childNodes[0].remove();
-  else {
+function dellCol() {
+  let rows = document.getElementsByClassName("row");
+  console.log(rows[0].children.length);
+  if (rows[0].children.length > 1) {
+    for (let i = 0; i < rows.length; i++) {
+      rows[i].lastElementChild.remove();
+      // rows[i].childNodes[rows.length].remove();
+    }
+  } else {
     alert("Нельзя удалить последнюю ячейку");
   }
 }

@@ -10,39 +10,23 @@
   <body>
     <div class="wrapper">
       <h1>Task 6</h1>
+      <div class="controlCol">
+        <input type="button" onclick="addCol()" value="+" />
+        <input type="button" onclick="dellCol()" value="-" />
+      </div>
 
       <div id="table">
         <div class="row">
           <input type="text" class="cell" />
           <input type="text" class="cell" />
-          <input
-            type="button"
-            onclick="addCol(event.currentTarget)"
-            value="+"
-          />
-          <input
-            type="button"
-            onclick="dellCol(event.currentTarget)"
-            value="-"
-          />
         </div>
         <div class="row">
           <input type="text" class="cell" />
           <input type="text" class="cell" />
-          <input
-            type="button"
-            onclick="addCol(event.currentTarget)"
-            value="+"
-          />
-          <input
-            type="button"
-            onclick="dellCol(event.currentTarget)"
-            value="-"
-          />
         </div>
       </div>
-      <input type="button" onclick="addRow()" value="addRow" />
-      <input type="button" onclick="dellRow()" value="remove last Row" />
+      <input type="button" onclick="addRow()" value="+" />
+      <input type="button" onclick="dellRow()" value="-" />
     </div>
     <script src="./task6.js"></script>
   </body>
