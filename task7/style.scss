@@ -1,0 +1,104 @@
+body {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+.history {
+  margin: 0px 50px;
+  .label {
+    color: gray;
+    padding: 0px;
+  }
+  .itemHistory {
+    font-family: sans-serif;
+    color: grey;
+    font-size: 24px;
+  }
+}
+.label {
+  padding: 10px;
+  text-align: center;
+  font-size: 3em;
+  color: white;
+}
+.calc {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  background-color: gray;
+  box-shadow: 3px 3px 5px 3px gray;
+
+  .slogan {
+    font-size: 1em;
+    padding: 0 20px;
+    color: white;
+    text-align: right;
+  }
+  .keyboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    box-sizing: border-box;
+    grid-row-gap: 0.5em;
+    grid-column-gap: 0.5em;
+    padding: 0.5em;
+    margin: 0px;
+    max-width: 450px;
+    span {
+      box-shadow: 3px 3px 1px 3px black;
+      padding: 0.5em;
+      border-radius: 10%;
+
+      box-sizing: border-box;
+
+      //height: 2em;
+      //width: 2em;
+      background-color: #fafafa;
+      line-height: 100%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-size: 3em;
+      &:hover {
+        box-shadow: 1px 1px 1px 1px black;
+      }
+    }
+    div.input-label {
+      border-radius: 0px;
+      user-select: none;
+      padding: 0.5em;
+
+      grid-column-start: 1;
+      grid-column-end: 5;
+      input {
+        user-select: none;
+        background-color: #fafafa;
+        border: none;
+        width: 100%;
+      }
+      .calc__input {
+        opacity: 1;
+        user-select: none;
+        font-size: 2em;
+        box-sizing: border-box;
+      }
+      .calc__input__old {
+        border: none;
+        font-size: 1em;
+        height: 0.9em; //30px;
+        user-select: none;
+        box-sizing: border-box;
+      }
+    }
+  }
+  div.input-label {
+    border-radius: 10%;
+    box-sizing: border-box;
+    display: block;
+    background-color: #fafafa;
+  }
+}
