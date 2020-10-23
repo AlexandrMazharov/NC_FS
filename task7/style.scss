@@ -1,21 +1,48 @@
+$primary: #b0d8c0;
+$secondary: #40917e;
+$color3: #10705a;
 body {
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  font-family: Helvetica, sans-serif;
 }
 .wrapper {
   display: flex;
   justify-content: space-around;
 }
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $color3;
+}
 .history {
+  border: 3px solid $color3;
   margin: 0px 50px;
+  background-color: $primary;
+  color: black;
+  min-width: 200px;
+  max-height: 660px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+
   .label {
-    color: gray;
-    padding: 0px;
+    padding: 10px;
+    font-size: 2em;
+    border: 2px solid white;
+  }
+  &__list {
+    border: 2px solid white;
+    height: calc(100% - 64px);
   }
   .itemHistory {
-    font-family: sans-serif;
-    color: grey;
     font-size: 24px;
   }
 }
@@ -25,11 +52,15 @@ body {
   font-size: 3em;
   color: white;
 }
+span.none {
+  background-color: inherit;
+}
 .calc {
   box-sizing: border-box;
   font-family: sans-serif;
-  background-color: gray;
-  box-shadow: 3px 3px 5px 3px gray;
+  background-color: $color3;
+  border: 2px solid $color3;
+  // box-shadow: 3px 3px 5px 3px gray;
 
   .slogan {
     font-size: 1em;
@@ -42,41 +73,39 @@ body {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     box-sizing: border-box;
-    grid-row-gap: 0.5em;
-    grid-column-gap: 0.5em;
-    padding: 0.5em;
+    // grid-row-gap: 0.5em;
+    // grid-column-gap: 0.5em;
+    // padding: 0.5em;
     margin: 0px;
     max-width: 450px;
     span {
-      box-shadow: 3px 3px 1px 3px black;
+      border: 1px solid white;
       padding: 0.5em;
-      border-radius: 10%;
-
+      // border-radius: 10%;
       box-sizing: border-box;
-
-      //height: 2em;
-      //width: 2em;
-      background-color: #fafafa;
+      background-color: $primary;
       line-height: 100%;
       text-align: center;
       display: flex;
       justify-content: center;
       flex-direction: column;
       font-size: 3em;
+      transition: background 300ms, opacity 500ms 800ms;
       &:hover {
-        box-shadow: 1px 1px 1px 1px black;
+        background: $secondary;
+        // box-shadow: 1px 1px 1px 1px black;
       }
     }
     div.input-label {
       border-radius: 0px;
       user-select: none;
       padding: 0.5em;
-
+      // margin: 10px 0px;
       grid-column-start: 1;
       grid-column-end: 5;
       input {
         user-select: none;
-        background-color: #fafafa;
+        background-color: white;
         border: none;
         width: 100%;
       }
@@ -99,6 +128,6 @@ body {
     border-radius: 10%;
     box-sizing: border-box;
     display: block;
-    background-color: #fafafa;
+    background-color: white;
   }
 }

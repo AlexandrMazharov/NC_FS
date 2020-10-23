@@ -18,7 +18,7 @@ function main(newItem) {
       input_label.value = "";
 
       if (operand == "√") {
-        result = Math.sqrt(old);
+        result = sqr(old);
         clear();
       }
     } else if (newItem == "-") {
@@ -49,9 +49,6 @@ function main(newItem) {
           case "^": {
             result = degree(old, current);
           }
-          case "√": {
-            result = sqr(a);
-          }
         }
         clear();
       }
@@ -68,7 +65,7 @@ let sub = (a, b) => a - b;
 let mul = (a, b) => a * b;
 let div = (a, b) => (a / b).toFixed(3);
 let degree = (a, b) => Math.pow(a, b);
-let sqr = (a) => Math.sqrt(a);
+let sqr = (a) => Math.sqrt(a).toFixed(3);
 
 let clear = function clearCalc() {
   let calc = old + operand + current + "=" + result;
@@ -117,6 +114,11 @@ let addHistory = function addHistory(inserted) {
 function isFigure(symbol) {
   if ((symbol >= "0" && symbol <= "9") || symbol == ".") return true;
   else return false;
+}
+function clearHistory() {
+  let history = document.getElementById("history__list");
+  let newHistory = history.cloneNode(false);
+  history.replaceWith(newHistory);
 }
 
 function isOperand(symbol) {
