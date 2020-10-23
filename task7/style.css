@@ -17,18 +17,6 @@ body {
       justify-content: space-around;
 }
 
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-::-webkit-scrollbar-track {
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #10705a;
-}
-
 .history {
   border: 3px solid #10705a;
   margin: 0px 50px;
@@ -55,7 +43,7 @@ body {
   font-size: 24px;
 }
 
-.label {
+.calc__label {
   padding: 10px;
   text-align: center;
   font-size: 3em;
@@ -74,14 +62,7 @@ span.none {
   border: 2px solid #10705a;
 }
 
-.calc .slogan {
-  font-size: 1em;
-  padding: 0 20px;
-  color: white;
-  text-align: right;
-}
-
-.calc .keyboard {
+.calc__keyboard {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr;
@@ -94,7 +75,7 @@ span.none {
   max-width: 450px;
 }
 
-.calc .keyboard span {
+.calc__keyboard span {
   border: 1px solid white;
   padding: 0.5em;
   -webkit-box-sizing: border-box;
@@ -117,11 +98,11 @@ span.none {
   transition: background 300ms, opacity 500ms 800ms;
 }
 
-.calc .keyboard span:hover {
+.calc__keyboard span:hover {
   background: #40917e;
 }
 
-.calc .keyboard div.input-label {
+.calc__keyboard div.input-label {
   border-radius: 0px;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -133,7 +114,7 @@ span.none {
   grid-column-end: 5;
 }
 
-.calc .keyboard div.input-label input {
+.calc__keyboard div.input-label input {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -143,7 +124,7 @@ span.none {
   width: 100%;
 }
 
-.calc .keyboard div.input-label .calc__input {
+.calc__keyboard div.input-label .calc__input {
   opacity: 1;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -154,7 +135,7 @@ span.none {
           box-sizing: border-box;
 }
 
-.calc .keyboard div.input-label .calc__input__old {
+.calc__keyboard div.input-label .calc__input__old {
   border: none;
   font-size: 1em;
   height: 0.9em;
@@ -166,7 +147,7 @@ span.none {
           box-sizing: border-box;
 }
 
-.calc div.input-label {
+div.input-label {
   border-radius: 10%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
