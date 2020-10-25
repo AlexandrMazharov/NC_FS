@@ -22,11 +22,9 @@ function startgame() {
     else if ((inputs) < (target)) alert("Искомое число больше");
     counst++;
   } while ((inputs) !== target);
-  result = confirm(`Вы угадали. Количество попыток ${counst} Начать заного?`);
+  result = confirm(`Вы угадали. Количество попыток ${counst} Начать заново?`);
   if (result == true) {
     startgame();
-  } else {
-    window.close();
   }
 }
 

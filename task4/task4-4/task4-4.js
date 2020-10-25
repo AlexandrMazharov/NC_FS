@@ -17,6 +17,7 @@ function generateArr() {
     if (!(i % 3) && !(i % 5)) {
       arr[i] = "FizzBluzz";
     }
+    arr[0] = 0;
   }
 }
 

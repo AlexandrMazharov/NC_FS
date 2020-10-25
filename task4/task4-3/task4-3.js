@@ -1,5 +1,5 @@
 let arr = [];
-let MIN = 0; // min size on arr
+let MIN = 1; // min size on arr
 let MAX = 100; //max size on arr
 const LENGTH = 20; // array length
 completionArr(arr, LENGTH); // заполяем массив
