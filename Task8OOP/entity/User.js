@@ -1,4 +1,3 @@
-// const  b = require("Book");
 import {Person} from './Person.js';
 export class User extends Person {
 
@@ -6,13 +5,13 @@ export class User extends Person {
     _listBooksOnHand= [];
 
 
-    constructor(name, email, adress, libraryCardNumber, listBooksOnHand) {
-        super(name, email, adress);
+    constructor(name, email, address, libraryCardNumber, listBooksOnHand) {
+        super(name, email, address);
         this._libraryCardNumber = libraryCardNumber;
         this._listBooksOnHand = (listBooksOnHand);
         this._name = name;
         this._email = email;
-        this._adress = adress;
+        this._address = address;
         this._listBooksOnHand = listBooksOnHand;
 
     }
@@ -33,12 +32,12 @@ export class User extends Person {
         this._email = value;
     }
 
-    get adress() {
-        return this._adress;
+    get address() {
+        return this._address;
     }
 
-    set adress(value) {
-        this._adress = value;
+    set address(value) {
+        this._address = value;
     }
 
     get libraryCardNumber() {

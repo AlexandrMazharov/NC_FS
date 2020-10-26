@@ -10,10 +10,10 @@ let p = new Person('n', 'email', 'adr');
 console.log(p.getPerson);
 
 let g = new Genre('name', 'desc');
-let a = new Author('Alex', 'email', 'adres',);
+let a = new Author('Alex', 'email', 'address',);
 let w = new Work("title", a, g);
 console.log(w);
-let user = new User('name', "email", "adress", 123, []);
+let user = new User('name', "email", "address", 123, []);
 console.log(user);
 let b = new Book(w, "yearPublication", "inventoryNumber", user, "dateReturn");
 console.log(b);
