@@ -31,7 +31,7 @@ function main(newItem) {
       if (old != "" && current != "" && operand != "") {
         switch (operand) {
           case "+": {
-            result = sum(old, current); // Number(old) + Number(current);
+            result = sum(old, current); 
             break;
           }
           case "-": {
