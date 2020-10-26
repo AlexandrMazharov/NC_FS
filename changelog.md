@@ -13,3 +13,5 @@
 | 17.10.20 |    task 4    | close mr task4, add branch Task4FromMaster. create MR |  https://gitlab.com/nc-samara-frontend-course-2020/development/fs_mazharov_alexandr/-/merge_requests/8 |
 | 17.10.20 |    task 5    | close mr task5, add branch Task5FromMaster. create MR |  https://gitlab.com/nc-samara-frontend-course-2020/development/fs_mazharov_alexandr/-/merge_requests/9 |
 | 17.10.20 |    task 6    |                                             create MR | https://gitlab.com/nc-samara-frontend-course-2020/development/fs_mazharov_alexandr/-/merge_requests/10 |
+| 26.10.20 |    task 7    |                                             create MR | https://gitlab.com/nc-samara-frontend-course-2020/development/fs_mazharov_alexandr/-/merge_requests/11 |
+| 26.10.20 |    task 8    |                                             create MR |https://gitlab.com/nc-samara-frontend-course-2020/development/fs_mazharov_alexandr/-/merge_requests/12  |
