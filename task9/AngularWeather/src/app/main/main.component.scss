@@ -5,5 +5,18 @@
   background: #fff59d;
   width: 60px;
 }
+.switch{
+  margin-top: 10px;
+}
+.main{position: relative}
+.weatherImg{
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  right: 20px;
+  bottom: 25%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
 
-
+}

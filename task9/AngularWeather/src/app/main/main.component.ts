@@ -23,10 +23,11 @@ export class MainComponent implements OnInit {
   _weather: any;
   public currentLng;
   img: string;
-
+  public colectionImg: any;
 
   @Input() isMetric;
   public isNotFoundedCity: boolean;
+
 
   public upperFirstChar(s: string): string {
     return (
@@ -80,17 +81,26 @@ export class MainComponent implements OnInit {
     this.getW(newPlace);
   }
 
+  getImg(q: string): any {
+    this.weatherService.getImg(q).then(r => r.json()).then(j => {
+      this.colectionImg = j;
+      console.log(j);
+    });
+  }
+
   getW(newPlace: string): any {
     console.log(this._place, this.isMetric, this.currentLng);
-    this.weatherService.search(newPlace, this.isMetric, this.currentLng).then(res => {
-      this._weather = this.weatherService.weather;
-      console.log(this._weather);
-      if (this._weather !== null) {
-        this.isNotFoundedCity = true;
-        this.img = `http://openweathermap.org/img/wn/${this._weather?.weather[0].icon}@2x.png`;
-      } else {
-        this.isNotFoundedCity = false;
-      }
-    });
+    this.weatherService.search(newPlace, this.isMetric, this.currentLng)
+      .then(res => {
+        this._weather = this.weatherService.weather;
+        console.log(this._weather);
+        if (this._weather !== null) {
+          this.isNotFoundedCity = true;
+          this.img = `http://openweathermap.org/img/wn/${this._weather?.weather[0].icon}@2x.png`;
+          this.getImg(this._weather.weather[0].description);
+        } else {
+          this.isNotFoundedCity = false;
+        }
+      });
   }
 }

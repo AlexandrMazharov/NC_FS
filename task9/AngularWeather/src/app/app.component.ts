@@ -24,7 +24,7 @@ export class AppComponent {
     this.ngOnInit();
   }
 
-  onChangedLanguage(newLng: string) {
+  onChangedLanguage(newLng: string): any {
     this.currentLng = newLng;
     this.ngOnInit();
   }
@@ -41,7 +41,7 @@ export class AppComponent {
     this.ngOnInit();
   }
 
-  error(err) {
+  error(err): any {
     console.warn(`ERROR(${err.code}): ${err.message}`);
   }
 

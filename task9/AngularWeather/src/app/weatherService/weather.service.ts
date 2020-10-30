@@ -13,7 +13,12 @@ export class WeatherService {
     return this._weather;
   }
 
-  public search(city, isMetric, lng) {
+  public getImg(q): any {
+    let url = `http://www.splashbase.co/api/v1/images/search?query=${q}`;
+    return (window.fetch(url));
+  }
+
+  public search(city, isMetric, lng): any {
     let promise = new Promise((resolve, reject) => {
 
       let unit = '';
@@ -24,7 +29,7 @@ export class WeatherService {
       }
       const API = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.APIKEY}&lang=${lng}&units=${unit}`;
       console.log(API);
-      this._http.get(API)
+      this.http.get(API)
         .toPromise()
         .then(
           res => {
@@ -41,6 +46,6 @@ export class WeatherService {
     return promise;
   }
 
-  constructor(private _http: HttpClient) {
+  constructor(private http: HttpClient) {
   }
 }

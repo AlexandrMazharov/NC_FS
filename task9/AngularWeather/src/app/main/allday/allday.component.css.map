@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,UAAU,CAAC;EACT,SAAS,EAAE,KAAK;EAEhB,SAAS,EAAE,YAAY;CACxB;;AACD,AAAA,WAAW,GAAG,GAAG,CAAC;EAGhB,UAAU,EAAE,OAAO;EACnB,aAAa,EAAE,OAAO;CACvB;;AACD,AAAA,aAAa,CAAC;EACZ,MAAM,EAAE,KAAK;CACd;;AACD,AAAA,kBAAkB,CAAC;EACjB,WAAW,EAAE,IAAI;EACjB,YAAY,EAAE,IAAI;EAClB,UAAU,EAAE,MAAM;EAClB,WAAW,EAAE,IAAI;CAClB",
-    "sources": [
-        "allday.component.scss"
-    ],
-    "names": [],
-    "file": "allday.component.css"
-}
