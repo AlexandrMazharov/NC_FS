@@ -1,0 +1,11 @@
+{
+  "HOME": {
+    "HUMIDITY": "Humidity",
+    "CLOUDINES": "Cloudiness",
+    "PRESSURE": "Pressure",
+    "WIND": "  Wind",
+    "chooseCity": "Choose city",
+    "ERROR" :"Select city. It looks like the city was not selected or something broke.",
+    "PA":"Pa"
+  }
+}
