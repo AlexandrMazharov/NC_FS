@@ -4,7 +4,7 @@ import {WeatherService} from 'src/app/weatherService/weather.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrls: ['./app.component.less'],
 })
 @Injectable()
 export class AppComponent {

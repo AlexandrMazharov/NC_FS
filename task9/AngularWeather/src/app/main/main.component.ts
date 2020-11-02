@@ -13,7 +13,7 @@ import {WeatherService} from '../weatherService/weather.service';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss'],
+  styleUrls: ['./main.component.less'],
 })
 @Injectable()
 export class MainComponent implements OnInit {
