@@ -1,0 +1,17 @@
+{
+  "files": [
+    "src/main.ts",
+    "src/entity/*.ts",
+    "src/Logger.ts"
+
+//    "src/decorators/*.ts",
+//    "src/fabric/*.ts"
+
+  ],
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "target": "es6",
+    "experimentalDecorators": true,
+    "allowJs": true
+  }
+}

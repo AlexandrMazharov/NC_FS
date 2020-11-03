@@ -1,3 +1,5 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea
 /task10/npmGulp/node_modules
+*/node_modules
+/task11/node_modules
