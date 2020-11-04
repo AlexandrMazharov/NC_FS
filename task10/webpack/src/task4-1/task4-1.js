@@ -1,1 +1,3 @@
-alert("Привет, JavaScript");
+function task1() {
+  alert("Привет, JavaScript");
+}
