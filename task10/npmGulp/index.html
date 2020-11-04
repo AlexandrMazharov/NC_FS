@@ -1,41 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="./dist/main.js"></script>  
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      section {
+        padding: 20px;
+        border-bottom: 1px solid;
+      }
+    </style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=, initial-scale=1.0" />
     <title>Document</title>
   </head>
   <body>
-    <h1>Task 4 js</h1>
-    <hr />
-    <ul>
-      <li>
-        <!-- <a href="./task4-0/task4-0.html">TASK 0. Поменяйте числа местами</a> -->
-        <a href="./src/task4-0/task4-0.html">TASK 0. Поменяйте числа местами</a>
-      </li>
-      <li>
-        <a href="./src/task4-1/task4-1.html">TASK 1. Hello world</a>
-      </li>
-      <li>
-        <a href="./src/task4-2/task4-2.html"
-          >TASK 2. Получение информации о пользователе</a
-        >
-      </li>
-      <li>
-        <a href="./src/task4-3/task4-3.html">TASK 3. Работа с массивами</a>
-      </li>
-      <li>
-        <a href="./src/task4-4/task4-4.html">TASK 4. Игра FizzBuzz</a>
-      </li>
+    <div class="wrapper">
+    <h1>Task 10 js</h1>
+    <section>
+      <header>task0</header>
+      <input type="button" value="Task0Start" onClick="task0()" />
+    </section>
+    <section>
+      <header>task1</header>
+      <input type="button" value="Task1Start" onClick="task1()" />
+    </section>
 
-      <li>
-        <a href="./src/task4-5/task4-5.html">TASK 5. Палиндром</a>
-      </li>
-      <li>
-        <a href="./src/task4-6/task4-6.html">
-          TASK 6. Игра "Угадай число от 1 до 1000"</a
-        >
-      </li>
-    </ul>
+    <section>
+      <header>task2</header>
+      <input type="button" value="Task2Start" onclick="task2()" />
+    </section>
+
+    <section>
+      <header>task3</header>
+      <input type="button" value="Task3Start" onclick="t3()" />
+    </section>
+    <section>
+      <header>task4</header>
+      <div class="game" id="game">
+        <div class="game" id="startgame"></div>
+      </div>
+    </section>
+    <section>
+      <header>task5</header>
+      <input type="button" value="Task5Start" onclick="task5()" />
+    </section>
+
+    <section>
+      <header>task6</header>      
+      <div class="game6">
+        <div class="game6__desription">
+          <h1>Игра "Угадай число от 1 до 1000"</h1>
+          При нажатии на кнопку система генерирует случайное число от 1 до 1000,
+          которое пользователь должен угадать, открывается диалоговое окно для
+          ввода числа с подписью "Введите число". Если введенное число меньше, чем
+          задуманное, вывести диалоговое окно ввода с надписью "Искомое число
+          больше!" Если введенное число больше, чем задуманное, вывести диалоговое
+          окно ввода с надписью "Искомое число меньше!"
+          <mark>Подсказка в консоле</mark>
+        </div>
+        <div class="game6__start-btn" onclick="startgame()">Начать игру</div>
+    </section>
+  </div>
   </body>
 </html>
