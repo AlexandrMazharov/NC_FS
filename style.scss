@@ -1,6 +1,7 @@
 $accent-color: #122361;
 $accent-color2: #ffae00;
 $text-color: #807e7e;
+
 * {
   font-family: "Roboto", sans-serif;
 }
@@ -503,36 +504,41 @@ textarea {
   border: 1px solid #fafafa;
   outline: none;
 }
-.messegeForm {
+.message-form {
   position: relative;
   max-width: 600px;
   margin: 50px auto 0;
   background: white;
   border-radius: 30px;
-}
+  margin-bottom: 20px;
+  &__form-inner input,
+  &__form-inner textarea {
+    display: block;
+    width: 100%;
+    padding: 0 10px;
+    margin-top: 10px;
 
-.form-inner input,
-.form-inner textarea {
-  display: block;
-  width: 100%;
-  padding: 0 10px;
-  margin-top: 10px;
+    background: #e9eff6;
+    line-height: 40px;
+    border-radius: 20px;
+    font-family: "Roboto", sans-serif;
+  }
 
-  background: #e9eff6;
-  line-height: 40px;
-  border-radius: 20px;
-  font-family: "Roboto", sans-serif;
-}
-
-.form-inner textarea {
-  resize: none;
-}
-.form-inner h3 {
-  margin-top: 0;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: 24px;
-  color: #707981;
+  &__form-inner textarea {
+    resize: none;
+  }
+  &__form-inner {
+    .btn-sent input[button] {
+      width: 105%;
+    }
+  }
+  &__form-inner h3 {
+    margin-top: 0px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    color: #707981;
+  }
 }
 // form valid
 
@@ -569,7 +575,7 @@ input[type="number"] {
   width: 100%;
   height: 100%;
   left: 0px;
-  z-index: 10000;  
+  z-index: 10000;
 }
 
 #alertBox {
@@ -592,7 +598,7 @@ input[type="number"] {
   margin: 0;
   font: bold 1em Raleway, arial;
   background-color: green;
-  color: #fff;  
+  color: #fff;
   padding: 10px 0 10px 5px;
 }
 
@@ -630,9 +636,6 @@ input[type="number"] {
   border-top: 2px solid #fff;
   border-bottom: 2px solid #fff;
 }
-
-
-
 
 //
 @media SCREEN AND (max-width: 425px) {
