@@ -13,8 +13,7 @@ function dellCol() {
   console.log(rows[0].children.length);
   if (rows[0].children.length > 1) {
     for (let i = 0; i < rows.length; i++) {
-      rows[i].lastElementChild.remove();
-      // rows[i].childNodes[rows.length].remove();
+      rows[i].lastElementChild.remove();    
     }
   } else {
     alert("Нельзя удалить последнюю ячейку");

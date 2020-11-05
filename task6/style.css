@@ -19,8 +19,7 @@ input[type="button"] {
   justify-content: flex-end;
   flex-direction: row;
 }
-#table {
-}
+
 .row {
   min-height: 40px;
   border: 1px;
