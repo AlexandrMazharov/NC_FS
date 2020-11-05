@@ -317,8 +317,8 @@
       </div>
     </section>
     <section>
-      <form class="messegeForm">
-        <div class="form-inner">
+      <form class="message-form">
+        <div class="message-form__form-inner">
           <h3>Написать нам</h3>
 
           <input
@@ -347,28 +347,30 @@
             onChange="formChange()"
             type="tel"
             name="tel"
-            placeholder="Tepephone "
+            placeholder="0 (000) 00 000 00"
           />
           <label class="tel-label" for="tel">Поле заполнено не корректно</label>
 
           <input onChange="formChange()" type="email" name="email"
-          placeholder="Email" required / >
+          placeholder="address@email.ru" required / >
           <label class="email-label" for="email"
             >Поле заполнено не корректно</label
           >
           <textarea
             onChange="formChange()"
             placeholder="Сообщение..."
-            name="messege"
+            name="message"
             rows="3"
             required
           ></textarea>
-          <label class="mes-label" for="meess"
+          <label class="mes-label" for="message"
             >Поле заполнено не корректно</label
           >
           <input
+            style="width: 105%"
             id="formsubmit"
             type="button"
+            class="btn-sent"
             value="Отправить"
             onclick="formClick()"
             disabled
