@@ -1,17 +1,15 @@
  export class Person{
-
     _name;
     _email;
-    _adress;
+    _address;
     getPerson  = new function (){
-        return`${this.name} ${this.email} ${this.adres}`;
+        return`${this.name} ${this.email} ${this.address}`;
      }
-    constructor(name, email, adress) {
+    constructor(name, email, address) {
         this._name = name;
         this._email = email;
-        this._adress = adress;
+        this._address = address;
     }
-
 
     get name() {
         return this._name;
@@ -29,11 +27,11 @@
         this._email = value;
     }
 
-    get adress() {
-        return this._adress;
+    get address() {
+        return this._address;
     }
 
-    set adress(value) {
-        this._adress = value;
+    set address(value) {
+        this._address = value;
     }
 }

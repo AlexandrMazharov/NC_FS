@@ -2,7 +2,6 @@
     _name;
     _listBooks;
 
-
     constructor(name, listBooks) {
         this._name = name;
         this._listBooks = listBooks;

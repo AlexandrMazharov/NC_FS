@@ -1,27 +1,24 @@
- export class Genre{
+export class Genre {
+  _name;
+  _description;
+  constructor(name, description) {
+    this._name = name;
+    this._description = description;
+  }
 
-    _name
-    _description
+  get name() {
+    return this._name;
+  }
 
-    constructor(name, description) {
-        this._name = name;
-        this._description = description;
-    }
+  set name(value) {
+    this._name = value;
+  }
 
-    get name() {
-        return this._name;
-    }
+  get description() {
+    return this._description;
+  }
 
-    set name(value) {
-        this._name = value;
-    }
-
-    get description() {
-        return this._description;
-    }
-
-    set description(value) {
-        this._description = value;
-    }
+  set description(value) {
+    this._description = value;
+  }
 }
-

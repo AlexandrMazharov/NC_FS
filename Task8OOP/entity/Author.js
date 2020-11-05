@@ -1,14 +1,11 @@
 import {Person} from './Person.js';
-import {Book} from './Book.js';
 export class Author extends Person {
 
     _listbooks = [];
 
-    constructor(name, email, adress, list) {
-        super(name, email, adress);
+    constructor(name, email, address, list) {
+        super(name, email, address);
         this._listbooks =list;
-
-
     }
 
     get name() {
@@ -27,12 +24,12 @@ export class Author extends Person {
         this._email = value;
     }
 
-    get adress() {
-        return this._adress;
+    get address() {
+        return this._address;
     }
 
-    set adress(value) {
-        this._adress = value;
+    set address(value) {
+        this._address = value;
     }
 
     get listbooks() {
