@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Task 6</h1>
+      <div class="controlCol">
+        <input type="button" onclick="addCol()" value="+" />
+        <input type="button" onclick="dellCol()" value="-" />
+      </div>
+
+      <div id="table">
+        <div class="row">
+          <input type="text" class="cell" />
+          <input type="text" class="cell" />
+          <input type="button" onclick="dellThisRow(this)" />
+        </div>
+        <div class="row">
+          <input type="text" class="cell" />
+          <input type="text" class="cell" />
+          <input type="button" onclick="dellThisRow(this)" />
+        </div>
+        <div class="row control">
+          <input
+            class="cell"
+            type="button"
+            data-collNumber="0"
+            value="-"
+            onclick="dellThisColl(this)"
+          />
+          <input
+            class="cell"
+            type="button"
+            data-collNumber="1"
+            value="-"
+            onclick="dellThisColl(this)"
+          />
+        </div>
+      </div>
+
+      <input type="button" onclick="addRow()" value="+" />
+      <input type="button" onclick="dellRow()" value="-" />
+    </div>
+    <script src="./task6.js"></script>
+  </body>
+</html>
