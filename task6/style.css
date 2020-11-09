@@ -31,3 +31,9 @@ input[type="button"] {
   min-width: 40px;
   min-height: 40px;
 }
+div.control input {
+  box-sizing: border-box;
+  width: 175px;
+  margin: 0px;
+  
+}

@@ -19,12 +19,31 @@
         <div class="row">
           <input type="text" class="cell" />
           <input type="text" class="cell" />
+          <input type="button" onclick="dellThisRow(this)" />
         </div>
         <div class="row">
           <input type="text" class="cell" />
           <input type="text" class="cell" />
+          <input type="button" onclick="dellThisRow(this)" />
+        </div>
+        <div class="row control">
+          <input
+            class="cell"
+            type="button"
+            data-collNumber="0"
+            value="-"
+            onclick="dellThisColl(this)"
+          />
+          <input
+            class="cell"
+            type="button"
+            data-collNumber="1"
+            value="-"
+            onclick="dellThisColl(this)"
+          />
         </div>
       </div>
+
       <input type="button" onclick="addRow()" value="+" />
       <input type="button" onclick="dellRow()" value="-" />
     </div>
