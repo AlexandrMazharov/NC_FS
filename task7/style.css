@@ -24,8 +24,14 @@ body {
   color: black;
   min-width: 200px;
   max-height: 660px;
-  overflow-y: hidden;
-  overflow-x: hidden;
+}
+
+.history .history__list {
+  overflow-y: scroll;
+  overflow-x: scroll;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 200px;
 }
 
 .history .label {
