@@ -6,12 +6,19 @@ const LENGTH = 20; // array length
 
 completionArr(arr, LENGTH); // заполяем массив
 
-console.log(arr);
-let newArr = quickSort(arr);
-console.log(newArr);
 
+console.group("source");
+console.log(arr);
+console.groupEnd();
+let newArr = quickSort(arr);
+console.group("qsort ")
+console.log( newArr);
+console.groupEnd();
+
+console.group(" radix sort ")
 let newArr2 = radixSort(arr)
 console.log(newArr2);
+console.groupEnd();
 
 function radixSort(arr) {
     let seniorRadix = calculateSeniorRadix(arr);
