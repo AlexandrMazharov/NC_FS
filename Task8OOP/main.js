@@ -7,7 +7,8 @@ import {User} from './entity/User.js';
 import {Work} from './entity/Work.js';
 
 let p = new Person('n', 'email', 'adr');
-console.log(p.getPerson);
+
+console.log(p.getPerson());
 
 let g = new Genre('name', 'desc');
 let a = new Author('Alex', 'email', 'address',);

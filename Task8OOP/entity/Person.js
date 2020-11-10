@@ -2,7 +2,7 @@
     _name;
     _email;
     _address;
-    getPerson  = new function (){
+    getPerson  = function (){
         return`${this.name} ${this.email} ${this.address}`;
      }
     constructor(name, email, address) {
