@@ -1,0 +1,115 @@
+$primary: #b0d8c0;
+$secondary: #40917e;
+$color3: #10705a;
+body {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  font-family: Helvetica, sans-serif;
+}
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.history {
+  border: 3px solid $color3;
+  margin: 0px 50px;
+  background-color: $primary;
+  color: black;
+  min-width: 200px;
+  max-height: 660px;
+
+  .history__list {
+    overflow-y: scroll;
+    overflow-x: scroll;
+    box-sizing: border-box;
+    width: 200px;
+  }
+  .label {
+    padding: 10px;
+    font-size: 2em;
+    border: 2px solid white;
+  }
+  &__list {
+    border: 2px solid white;
+    height: calc(100% - 64px);
+  }
+  .itemHistory {
+    font-size: 24px;
+  }
+}
+.calc__label {
+  padding: 10px;
+  text-align: center;
+  font-size: 3em;
+  color: white;
+}
+span.none {
+  background-color: inherit;
+}
+.calc {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  background-color: $color3;
+  border: 2px solid $color3;
+
+  &__keyboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    box-sizing: border-box;
+    margin: 0px;
+    max-width: 450px;
+    span {
+      border: 1px solid white;
+      padding: 0.5em;
+      box-sizing: border-box;
+      background-color: $primary;
+      line-height: 100%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-size: 3em;
+      transition: background 300ms, opacity 500ms 800ms;
+      &:hover {
+        background: $secondary;
+      }
+    }
+    div.input-label {
+      border-radius: 0px;
+      user-select: none;
+      padding: 0.5em;
+      grid-column-start: 1;
+      grid-column-end: 5;
+      input {
+        user-select: none;
+        background-color: white;
+        border: none;
+        width: 100%;
+      }
+      .calc__input {
+        opacity: 1;
+        user-select: none;
+        font-size: 2em;
+        box-sizing: border-box;
+      }
+      .calc__input__old {
+        border: none;
+        font-size: 1em;
+        height: 0.9em;
+        user-select: none;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
+div.input-label {
+  border-radius: 10%;
+  box-sizing: border-box;
+  display: block;
+  background-color: white;
+}
+
+
