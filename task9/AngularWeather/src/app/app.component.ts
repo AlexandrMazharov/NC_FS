@@ -8,48 +8,37 @@ import {WeatherService} from 'src/app/weatherService/weather.service';
 })
 @Injectable()
 export class AppComponent {
-  public weather;
-  public isMetric;
-  public currentLng = 'en';
-  private dataService;
+  public weather: Weather;
+  public isMetric: boolean;
+  public currentLng: string = 'en';
+  private dataService: WeatherService;
 
-  options = {
-    enableHighAccuracy: true,
-    timeout: 5000,
-    maximumAge: 0,
-  };
-
-  onChangedMetric(increased: any): any {
+  public onChangedMetric(increased: object): void {
+    console.log(typeof this.isMetric)
     this.isMetric = !this.isMetric;
-    this.ngOnInit();
   }
 
-  onChangedLanguage(newLng: string): any {
+  public onChangedLanguage(newLng: string): void {
     this.currentLng = newLng;
-    this.ngOnInit();
   }
 
-  constructor(_dataService: WeatherService) {
+  public constructor(private _dataService: WeatherService) {
     this.dataService = _dataService;
   }
 
-  success(place: string): any {
+  private success(place: string): void {
     this.dataService.search(
       place,
       this.isMetric,
       this.currentLng);
-    this.ngOnInit();
   }
 
-  error(err): any {
+  private error(err): void {
     console.warn(`ERROR(${err.code}): ${err.message}`);
   }
 
-  onChangedPlace(place): any {
+  onChangedPlace(place): void {
     this.success(place);
-  }
-
-  private ngOnInit() {
   }
 }
 

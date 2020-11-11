@@ -35,7 +35,7 @@ export function httpLoaderFactory(http: HttpClient) {
       },
     }),
   ],
-  providers: [WeatherService, {provide: LOCALE_ID, useValue: 'de'}],
+  providers: [WeatherService, ],
 
   bootstrap: [AppComponent],
 })

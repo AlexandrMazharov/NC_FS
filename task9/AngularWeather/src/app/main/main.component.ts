@@ -9,6 +9,7 @@ import {
 import {FormControl} from '@angular/forms';
 import {TranslateService} from '@ngx-translate/core';
 import {WeatherService} from '../weatherService/weather.service';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-main',
@@ -17,14 +18,14 @@ import {WeatherService} from '../weatherService/weather.service';
 })
 @Injectable()
 export class MainComponent implements OnInit {
-  weatherService: WeatherService;
-  currentMetric: FormControl;
-  _place: string;
-  _weather: any;
-  public currentLng;
-  img: string;
-  public colectionImg: any;
-
+  private weatherService: WeatherService;
+  public currentMetric: FormControl;
+  public _place: string;
+  private _weather: Weather;
+  public currentLng: string;
+  public img: string;
+  private collectionImg: object;
+  public imgByDescription: string;
   @Input() isMetric;
   public isNotFoundedCity: boolean;
 
@@ -37,8 +38,8 @@ export class MainComponent implements OnInit {
   }
 
   @Input()
-  set weather(weather: any) {
-    this._weather = weather;
+  set weather(weather: object) {
+    this._weather = weather as Weather;
   }
 
   @Input()
@@ -51,13 +52,13 @@ export class MainComponent implements OnInit {
   @Output() onChangedPlace = new EventEmitter<String>();
 
 
-  changeLanguage(lng: string): any {
+  public changeLanguage(lng: string): void {
     this.currentLng = lng;
     this.onChangedLanguage.emit(lng);
     this.getW(this._place);
   }
 
-  changeMetric(increased: any): any {
+  public changeMetric(increased: boolean): void {
     this.isMetric = !this.isMetric;
     this.onChanged.emit(increased);
     this.getW(this._place);
@@ -76,23 +77,24 @@ export class MainComponent implements OnInit {
     this.currentMetric = new FormControl();
   }
 
-  changedPlace(newPlace): any {
+  public changedPlace(newPlace): void {
     this._place = newPlace;
     this.getW(newPlace);
   }
 
-  getImg(q: string): any {
+  private getImg(q: string): void {
     this.weatherService.getImg(q).then(r => r.json()).then(j => {
-      this.colectionImg = j;
-      console.log(j);
+      // this.collectionImg = j;
+      this.collectionImg = j.images[0].url;
+      console.log(j.images[0].url);
     });
+    // this.imgByDescription = this.collectionImg.images[0].url;
   }
-
-  getW(newPlace: string): any {
+  private getW(newPlace: string): void {
     console.log(this._place, this.isMetric, this.currentLng);
     this.weatherService.search(newPlace, this.isMetric, this.currentLng)
       .then(res => {
-        this._weather = this.weatherService.weather;
+        this.weather = this.weatherService.weather;
         console.log(this._weather);
         if (this._weather !== null) {
           this.isNotFoundedCity = true;

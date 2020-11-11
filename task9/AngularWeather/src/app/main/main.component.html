@@ -61,7 +61,14 @@
         <p
           class="flow-text text-darken-2">{{"HOME.PRESSURE" | translate}} {{_weather.main.pressure}} {{"HOME.PA" | translate}}</p>
         <p class="flow-text text-darken-2">{{"HOME.WIND" | translate}} {{_weather.wind.speed}} м/c</p>
-        <div class="weatherImg" [style.background-image]="'url('+ this.colectionImg?.images[0].url + ')'">
+<!--        <div  *ngIf="this.collectionImg?.images[0]?.url" class="">-->
+<!--          <div class="weatherImg" [style.background-image]="'url('+ this.collectionImg?.images[0].url + ')'">-->
+<!--        </div>-->
+                <div  *ngIf="collectionImg" >
+          <div class="weatherImg" [style.background-image]="'url('+ collectionImg + ')'">
+        </div>
+
+
         </div>
       </div>
     </div>

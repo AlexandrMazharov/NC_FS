@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root',
@@ -7,18 +8,18 @@ import {HttpClient} from '@angular/common/http';
 export class WeatherService {
 
   private APIKEY = '43fe13401509e1494a1a80c88243e12d';
-  private _weather: Object;
+  private _weather: Weather;
 
-  get weather(): Object {
+  get weather(): Weather {
     return this._weather;
   }
 
-  public getImg(q): any {
+  public getImg(q : string): any {
     let url = `http://www.splashbase.co/api/v1/images/search?query=${q}`;
     return (window.fetch(url));
   }
 
-  public search(city, isMetric, lng): any {
+  public search(city : string, isMetric : boolean, lng: string): any {
     let promise = new Promise((resolve, reject) => {
 
       let unit = '';
@@ -33,8 +34,7 @@ export class WeatherService {
         .toPromise()
         .then(
           res => {
-            console.log(res);
-            this._weather = res;
+            this._weather =  res as Weather;
             resolve();
           },
           error => {
