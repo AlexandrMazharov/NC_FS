@@ -1,8 +1,18 @@
-import {from, fromEvent, mapTo, observable, Observable} from "rxjs";
-import {filter, scan} from "rxjs/operators";
+import {from, fromEvent, observable, Observable} from "rxjs";
+import {filter, scan, map, mapTo, mergeAll, combineAll} from "rxjs/operators";
+import {take} from 'rxjs/operators';
 
 import {merge, interval} from 'rxjs'
 
+
+// task1();
+// task2();
+// task3();
+
+
+
+// Создать поток, который передает числа от 1 до 100.
+// Из этого потока вывести все простые числа.
 function task1() {
     console.group("task1");
     let arr = [];
@@ -30,6 +40,8 @@ function task1() {
     console.groupEnd();
 }
 
+// Создать Observable, который ведет отсчет от 5 до 1, после этого выбрасывает ошибку и завершается.
+// Создать Observer, который слушает Observable и выводит информацию в alert.
 function task2() {
     const stream2$ = new Observable(observer => {
 
@@ -52,61 +64,36 @@ function task2() {
 }
 
 // task3
+// Создать три кнопки
+// Создать три потока из события click, которые соответствуют каждой своей кнопке.
+// Объединить потоки в один, и по каждому событию из потока рандомно менять фон страницы.
+function task3() {
+    let el1 = window.document.getElementById("btn1");
+    let el2 = window.document.getElementById("btn2");
+    let el3 = window.document.getElementById("btn3");
 
-const observable1 = new Observable(observer => {
-    setTimeout(() => observer.next("last"), 1000);
-    setTimeout(() => observer.next("second"), 2000);
-    setTimeout(() => observer.next("three "), 3000);
-    setTimeout(() => observer.next("four"), 4000);
-    setTimeout(() => observer.next("five"), 5000);
-    observer.complete();
-})
-const observable2 = new Observable(observer => {
-    setTimeout(() => observer.next("last"), 1000);
-    setTimeout(() => observer.next("second"), 2000);
-    setTimeout(() => observer.next("three "), 3000);
-    setTimeout(() => observer.next("four"), 4000);
-    setTimeout(() => observer.next("five"), 5000);
-    observer.complete();
-})
-const observable3 = new Observable(observer => {
-    setTimeout(() => observer.next("last"), 1000);
-    setTimeout(() => observer.next("second"), 2000);
-    setTimeout(() => observer.next("three "), 3000);
-    setTimeout(() => observer.next("four"), 4000);
-    setTimeout(() => observer.next("five"), 5000);
-    observer.complete();
-})
-const a= merge(observable1, observable2, observable3);
+    const clicks1 = fromEvent(el1, 'click')
+    const clicks2 = fromEvent(el2, 'click')
+    const clicks3 = fromEvent(el3, 'click');
 
-window.startObservable1 = function () {
-    console.log("start1")
-
-    observable1.subscribe(res=>{
-        console.log(res)});
-    a.subscribe(res => {
-        console.log("tatat")
+    const higherOrder = merge(clicks1, clicks2, clicks3).pipe(
+        map((ev) => interval(1000).pipe(take(10))),
+    );
+    const firstOrder = higherOrder.pipe(mergeAll(3));
+    firstOrder.subscribe(x => {
+        console.log(x);
+        setNewBackground();
     });
+
+
+    function setNewBackground() {
+        const doc = document.querySelector("body");
+        doc.style.backgroundColor = getRandomColor();
+    }
+
+    function getRandomColor() {
+        let color = Math.floor(Math.random() * 16777216).toString(16);
+        return '#000000'.slice(0, -color.length) + color;
+
+    }
 }
-
-window.startObservable2 = function () {
-    console.log("start2")
-    a.subscribe(res => {
-        console.log("tatat")
-    });
-}
-
-window.startObservable3 = function () {
-    console.log("start3")
-    a.subscribe(res => {
-        console.log("tatat")
-    });
-}
-
-
-
-
-
-
-
-
