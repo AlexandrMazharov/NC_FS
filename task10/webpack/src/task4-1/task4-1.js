@@ -1,3 +1,3 @@
-function task1() {
+export function task1() {
   alert("Привет, JavaScript");
 }

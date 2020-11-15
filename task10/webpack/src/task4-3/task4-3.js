@@ -1,4 +1,4 @@
-let t3 = () => {
+export let task3 = () => {
   let arr = [];
   let MinValue = 1; // MinValue size on arr
   let MaxValue = 100; //MaxValue size on arr

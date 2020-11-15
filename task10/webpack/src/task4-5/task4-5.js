@@ -1,4 +1,4 @@
-function task5() {
+export function task5() {
   let word = prompt("Word", ["abba"]);
 
   function checkPalindrom(str) {

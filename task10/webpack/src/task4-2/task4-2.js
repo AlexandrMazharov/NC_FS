@@ -1,4 +1,4 @@
-function task2() {
+export function task2() {
   let name = "";
   do {
     name = prompt("Ваше имя", ["alexandr"]);

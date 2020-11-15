@@ -1,4 +1,4 @@
-function task0() {
+export function task0() {
   let a = 4;
   let b = 5;
   console.group("task0");
