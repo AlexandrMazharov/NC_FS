@@ -6,11 +6,13 @@
   "license": "ISC",
   "private": true,
   "dependencies": {
+    "gulp-uglify-es": "^2.0.0",
     "rxjs": "6.0.0"
   },
   "devDependencies": {
     "gulp": "~4.0.0",
-    "gulp-concat": "^2.6.1"
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^3.0.2"
   },
   "scripts": {
     "test": "exit 1"
