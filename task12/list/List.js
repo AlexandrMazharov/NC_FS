@@ -37,7 +37,7 @@ export class List {
         let count = 0;
         let current = this.head;
 
-        while (current.next!= null) {
+        while (current.next != null) {
             result = result + current.field + ", ";
             current = current.next;
             count++;
@@ -49,7 +49,6 @@ export class List {
     constructor() {
 
         this._head = null;
-        this._tail = null;
         this._size = -1;
     }
 
@@ -57,16 +56,16 @@ export class List {
     putToEnd(value) {
         let node = new Node();
         node.field = value;
-
+        let curr = this.head;
         if (this.size == -1) {
 
             this.head = node;
-            this.tail = node;
         } else {
-            this.tail.next = node;
-            node.prev = this.tail;
-
-            this.tail = node;
+            while (curr.next != null) {
+                curr = curr.next;
+            }
+            curr.next = node;
+            node.prev=curr;
         }
         this.size++;
 
@@ -160,11 +159,5 @@ export class List {
         this._size = value;
     }
 
-    get tail() {
-        return this._tail;
-    }
 
-    set tail(value) {
-        this._tail = value;
-    }
 }
