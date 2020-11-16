@@ -4,14 +4,12 @@
     "src/entity/*.ts",
     "src/Logger.ts"
 
-//    "src/decorators/*.ts",
-//    "src/fabric/*.ts"
-
   ],
   "compilerOptions": {
     "noImplicitAny": true,
-    "target": "es6",
-    "experimentalDecorators": true,
-    "allowJs": true
+    "target": "ES6",
+    "allowJs": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
   }
 }

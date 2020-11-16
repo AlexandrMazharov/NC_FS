@@ -1,9 +1,6 @@
 import {Person} from './Person';
 import {Book} from './Book';
-import {Logger} from '../Logger.js';
 
-
-@Logger
 export class Author implements Person {
 
     _listbooks: Book[];
@@ -14,13 +11,6 @@ export class Author implements Person {
 
     constructor() {
     }
-
-// constructor(listbooks: Book[], address: string, email: string, name: string) {
-    //     this._listbooks = listbooks;
-    //     this._address = address;
-    //     this._email = email;
-    //     this._name = name;
-    // }
 
     get listbooks(): Book[] {
         return this._listbooks;

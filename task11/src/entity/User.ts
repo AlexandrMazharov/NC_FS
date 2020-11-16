@@ -1,10 +1,6 @@
 import {Person} from './Person';
 import {Book} from "./Book";
-import {Logger} from "../Logger.js";
 
-
-
-@Logger
 export class User implements Person {
 
     _libraryCardNumber: bigint;
@@ -15,14 +11,6 @@ export class User implements Person {
 
     constructor() {
     }
-
-// constructor(libraryCardNumber: bigint, listBooksOnHand: Book[], address: string, email: string, name: string) {
-    //     this._libraryCardNumber = libraryCardNumber;
-    //     this._listBooksOnHand = listBooksOnHand;
-    //     this._address = address;
-    //     this._email = email;
-    //     this._name = name;
-    // }
 
     get libraryCardNumber(): bigint {
         return this._libraryCardNumber;

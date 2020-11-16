@@ -4,15 +4,14 @@ import {Genre} from './entity/Genre.js';
 import {Library} from './entity/Library.js';
 import {User} from './entity/User.js';
 import {Work} from './entity/Work.js';
+import {Creator} from "./Creator.js";
 
-//fabric method
-function create<T>(creator: { new(): T }): T {
-    return new creator();
-}
+let c = new Creator();
 
-let auth = create(Author);
+let auth = c.create(Author);
 
-let user1 = create(User);
+let user1 = c.create(User)
+console.log(c);
 
 //
 let g = new Genre('name', 'desc');
