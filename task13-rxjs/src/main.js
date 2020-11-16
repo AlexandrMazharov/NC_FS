@@ -46,11 +46,11 @@ function task2() {
     const stream2$ = new Observable(observer => {
 
         observer.next("first");
-        setTimeout(() => observer.next("last"), 1000);
-        setTimeout(() => observer.next("second"), 2000);
-        setTimeout(() => observer.next("three "), 3000);
-        setTimeout(() => observer.next("four"), 4000);
-        setTimeout(() => observer.next("five"), 5000);
+        setTimeout(() => observer.next("5"), 1000);
+        setTimeout(() => observer.next("4"), 2000);
+        setTimeout(() => observer.next("3 "), 3000);
+        setTimeout(() => observer.next("2"), 4000);
+        setTimeout(() => observer.next("1"), 5000);
         setTimeout(() => {
             observer.error("Error")
             observer.complete();
