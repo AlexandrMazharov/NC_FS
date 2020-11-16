@@ -27,13 +27,13 @@ let user = new User();
 user._address = "adress";
 user._email = "email";
 user._name = "Nikolay";
-user.libraryCardNumber = BigInt(123);
+user.libraryCardNumber = 123;
 user.listBooksOnHand = [];
 console.log(user);
 const date1 = new Date();
-let b = new Book(w, date1, BigInt(1234), user, date1);
+let b = new Book(w, date1, 1234, user, date1);
 console.log(b);
-let b2 = new Book(w, date1, BigInt(12345), user, date1);
+let b2 = new Book(w, date1,12345, user, date1);
 let l = new Library('name', [b, b2]);
 console.log(l);
 
