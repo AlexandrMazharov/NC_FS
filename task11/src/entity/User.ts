@@ -3,7 +3,7 @@ import {Book} from "./Book";
 
 export class User implements Person {
 
-    _libraryCardNumber: bigint;
+    _libraryCardNumber: number;
     _listBooksOnHand: Book[];
     _address: string;
     _email: string;
@@ -12,11 +12,11 @@ export class User implements Person {
     constructor() {
     }
 
-    get libraryCardNumber(): bigint {
+    get libraryCardNumber(): number {
         return this._libraryCardNumber;
     }
 
-    set libraryCardNumber(value: bigint) {
+    set libraryCardNumber(value: number) {
         this._libraryCardNumber = value;
     }
 

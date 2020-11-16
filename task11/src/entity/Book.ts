@@ -4,12 +4,12 @@ import {User} from "./User";
 export class Book {
  private _work : Work;
  private _yearPublication : Date;
- private _inventoryNumber : bigint;
+ private _inventoryNumber : number;
  private _bookHolder : User;
  private _dateReturn : Date;
 
 
-  constructor(work: Work, yearPublication: Date, inventoryNumber: bigint, bookHolder: User, dateReturn: Date) {
+  constructor(work: Work, yearPublication: Date, inventoryNumber: number, bookHolder: User, dateReturn: Date) {
     this._work = work;
     this._yearPublication = yearPublication;
     this._inventoryNumber = inventoryNumber;
@@ -33,11 +33,11 @@ export class Book {
     this._yearPublication = value;
   }
 
-  get inventoryNumber(): bigint {
+  get inventoryNumber(): number {
     return this._inventoryNumber;
   }
 
-  set inventoryNumber(value: bigint) {
+  set inventoryNumber(value: number) {
     this._inventoryNumber = value;
   }
 
