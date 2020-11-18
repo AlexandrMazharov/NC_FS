@@ -1,5 +1,5 @@
-/task10/npmGulp/node_modules
-/task10/webpack/node_modules/
+/Task10-npmGulpWebpack/npmGulp/node_modules
+/Task10-npmGulpWebpack/webpack/node_modules/
 /.idea/
-/task13-rxjs/node_modules/
-/task13-rxjs/dist/
+/Task13-RxJs/node_modules/
+/Task13-RxJs/dist/
