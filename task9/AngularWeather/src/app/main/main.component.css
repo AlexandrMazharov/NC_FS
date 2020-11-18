@@ -1,0 +1,66 @@
+.main {
+  text-align: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+li > div > select {
+  display: block;
+  background-color: #ee6e73;
+  border: none;
+  outline: none;
+}
+
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.naw__lang {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: -5px;
+  margin-right: 20px;
+}
+
+.nav-wrapper {
+  padding-left: 20px;
+  padding-right: 20px;
+  font: white;
+}
+
+.main__autherDay {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0px auto;
+}
+
+.custom-nav {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+/*# sourceMappingURL=main.component.css.map */

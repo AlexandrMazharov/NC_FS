@@ -1,0 +1,84 @@
+<ng-template #unset>
+  <div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-green-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div>
+      <div class="gap-patch">
+        <div class="circle"></div>
+      </div>
+      <div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<div class="container yellow lighten-3 py-2 " >
+  <div class="row yellow lighten-3 m-auto ">
+    <div class="col input-field">
+      <input id="place" type="text" class="validate"
+             #placeInput
+             [ngModel]="_place"
+             (change)="changedPlace(placeInput.value)">
+      <label for="place">{{"HOME.chooseCity" | translate}}</label>
+    </div>
+    <div class="col">
+      <ul class="row justify-content-end ">
+        <li class="col-4">
+          <select id="select"
+                  #langselect
+                  (change)="translate.use(langselect.value);
+               changeLanguage(langselect.value)">
+            <option *ngFor="let lang of translate.getLangs()" [value]="lang" class="lever">
+              {{ lang }}</option>
+          </select>
+        </li>
+        <li class="col-4">
+          <div class="switch">
+            <label style="">°F<input (change)="changeMetric($event)"
+                                     value="angular"
+                                     type="checkbox"
+            />
+              <span class="lever"></span>°C</label>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="container   m-auto" *ngIf="isNotFoundedCity else chooseCityTemplate">
+    <div class="row">
+      <div class="col-3 m-2 z-depth-2 yellow lighten-5">
+        <h4 class="flow-text ">{{_weather.name}}</h4>
+        <img src="{{img}}">
+      </div>
+      <div class="col-8  m-2 z-depth-2 yellow lighten-5 main">
+        <P class="flow-text">{{_weather.main.temp}} <span *ngIf="isMetric">°C</span> <span *ngIf="!isMetric">°F</span>
+        </P>
+        <P class="flow-text">{{upperFirstChar(_weather.weather[0].description)}} </P>
+        <p class="flow-text text-darken-2">{{"HOME.CLOUDINES" | translate}} {{_weather.clouds.all}} %</p>
+        <p
+          class="flow-text text-darken-2">{{"HOME.PRESSURE" | translate}} {{_weather.main.pressure}} {{"HOME.PA" | translate}}</p>
+        <p class="flow-text text-darken-2">{{"HOME.WIND" | translate}} {{_weather.wind.speed}} м/c</p>
+<!--        <div  *ngIf="this.collectionImg?.images[0]?.url" class="">-->
+<!--          <div class="weatherImg" [style.background-image]="'url('+ this.collectionImg?.images[0].url + ')'">-->
+<!--        </div>-->
+                <div  *ngIf="collectionImg" >
+          <div class="weatherImg" [style.background-image]="'url('+ collectionImg + ')'">
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</div>
+
+
+<ng-template #chooseCityTemplate>
+  <div class="card-panel teal lighten-2">{{"HOME.ERROR" | translate}}</div>
+</ng-template>
+
