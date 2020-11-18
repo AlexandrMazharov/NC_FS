@@ -1,0 +1,58 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.wrapper {
+  margin: 0px auto;
+  max-width: 1200px;
+}
+section {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  background: #fafafa;
+  box-shadow: 0 10px 6px -6px #777;
+  margin: 0.2rem;
+}
+header {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+input {
+  margin: 0.1rem;
+}
+.item {
+  padding: 10px;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+.game {
+  margin: 0px auto;
+  display: flex;
+  width: 600px;
+  flex-wrap: wrap;
+}
+
+.game6 {
+  margin: auto;
+  width: 500px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fafafa;
+  box-shadow: 0 10px 6px -6px #777;
+}
+.game6__start-btn {
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid blue;
+  cursor: pointer;
+  transition: 0.5s;
+  margin-top: 50px;
+}
+
+.game6__start-btn:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}

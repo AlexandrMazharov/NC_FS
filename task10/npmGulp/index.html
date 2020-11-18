@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="./dist/main.js"></script>  
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      section {
+        padding: 20px;
+        border-bottom: 1px solid;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+    <h1>Task 10 js</h1>
+    <section>
+      <header>task0</header>
+      <input type="button" value="Task0Start" onClick="task0()" />
+    </section>
+    <section>
+      <header>task1</header>
+      <input type="button" value="Task1Start" onClick="task1()" />
+    </section>
+
+    <section>
+      <header>task2</header>
+      <input type="button" value="Task2Start" onclick="task2()" />
+    </section>
+
+    <section>
+      <header>task3</header>
+      <input type="button" value="Task3Start" onclick="t3()" />
+    </section>
+    <section>
+      <header>task4</header>
+      <div class="game" id="game">
+        <div class="game" id="startgame"></div>
+      </div>
+    </section>
+    <section>
+      <header>task5</header>
+      <input type="button" value="Task5Start" onclick="task5()" />
+    </section>
+
+    <section>
+      <header>task6</header>      
+      <div class="game6">
+        <div class="game6__desription">
+          <h1>Игра "Угадай число от 1 до 1000"</h1>
+          При нажатии на кнопку система генерирует случайное число от 1 до 1000,
+          которое пользователь должен угадать, открывается диалоговое окно для
+          ввода числа с подписью "Введите число". Если введенное число меньше, чем
+          задуманное, вывести диалоговое окно ввода с надписью "Искомое число
+          больше!" Если введенное число больше, чем задуманное, вывести диалоговое
+          окно ввода с надписью "Искомое число меньше!"
+          <mark>Подсказка в консоле</mark>
+        </div>
+        <div class="game6__start-btn" onclick="startgame()">Начать игру</div>
+    </section>
+  </div>
+  </body>
+</html>
