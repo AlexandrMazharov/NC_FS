@@ -1,0 +1,17 @@
+{
+  "files": [
+    "src/main.ts",
+    "src/entity/*.ts",
+    "src/Logger.ts",
+    "src/Creator.ts"
+
+  ],
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "target": "ES6",
+    "allowJs": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true
+  }
+}
