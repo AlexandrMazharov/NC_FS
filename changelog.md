@@ -18,6 +18,20 @@
 | 26.10.20 |    task 9    | create MR |https://gitlab.com/nc-samara-frontend-course-2020/development/fs_mazharov_alexandr/-/merge_requests/13|
 | 26.10.20 |    task 11    | create MR |https://gitlab.com/nc-samara-frontend-course-2020/development/fs_mazharov_alexandr/-/merge_requests/14|
 |04.11.20 | task10 | create MR| https://gitlab.com/nc-samara-frontend-course-2020/development/fs_mazharov_alexandr/-/merge_requests/15 |
+| | task12 | create MR|  |
+| | task13 | create MR|  |
+| | task14 | create MR| https://gitlab.com/nc-samara-frontend-course-2020/development/fs_mazharov_alexandr/-/merge_requests/19 |
+| | task15 | create MR| https://gitlab.com/nc-samara-frontend-course-2020/development/fs_mazharov_alexandr/-/merge_requests/20 |
+|25.11.20 | task16 | create MR| https://gitlab.com/nc-samara-frontend-course-2020/development/fs_mazharov_alexandr/-/merge_requests/21 |
+
+
+
+
+
+
+
+
+
 
 
 
